@@ -263,6 +263,8 @@
 
 - (FlutterRTCVideoRenderer*)createWithTextureRegistry:(id<FlutterTextureRegistry>)registry
                                             messenger:(NSObject<FlutterBinaryMessenger>*)messenger {
+                                                                             NSLog(@"%@", messenger);
+                                                                             NSLog(@"%@", registry);
   return [[FlutterRTCVideoRenderer alloc] initWithTextureRegistry:registry messenger:messenger];
 }
 
