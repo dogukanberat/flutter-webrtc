@@ -3,7 +3,7 @@
 #elif TARGET_OS_OSX
 #import <FlutterMacOS/FlutterMacOS.h>
 #endif
-
+#import "FlutterRTCVideoRenderer.h"
 #import <Foundation/Foundation.h>
 #import <WebRTC/WebRTC.h>
 
