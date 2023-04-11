@@ -598,6 +598,10 @@
     [self deactiveRtcAudioSession];
     result(nil);
   } else if ([@"createVideoRenderer" isEqualToString:call.method]) {
+      print(1);
+      print(_textures);
+      print(_messenger);
+      print(render.textureId);
     FlutterRTCVideoRenderer* render = [self createWithTextureRegistry:_textures
                                                             messenger:_messenger];
     self.renders[@(render.textureId)] = render;
