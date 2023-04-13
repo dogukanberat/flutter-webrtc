@@ -601,15 +601,18 @@
     NSLog(@"1");
     NSLog(@"%@", _messenger);
     NSLog(@"%@", _textures);
-    if (_messenger != nil) {
+    if (_messenger != nil && _textures != nil) {
+        NSLog(@"21");
+
        FlutterRTCVideoRenderer* render = [self createWithTextureRegistry:_textures
                                                                 messenger:_messenger];
-        NSLog(@"%@2");
+        NSLog(@"23");
+
         self.renders[@(render.textureId)] = render;
         result(@{@"textureId" : @(render.textureId)});
       // _messenger değişkeni nil değilse işlemlerinizi yapabilirsiniz.
     } else {
-        NSLog(@"%@3");
+        NSLog(@"3");
 
       // _messenger değişkeni nil ise hata var demektir.
     }
