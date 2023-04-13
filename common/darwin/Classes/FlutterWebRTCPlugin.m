@@ -601,10 +601,19 @@
     NSLog(@"1");
     NSLog(@"%@", _messenger);
     NSLog(@"%@", _textures);
-    FlutterRTCVideoRenderer* render = [self createWithTextureRegistry:_textures
-                                                            messenger:_messenger];
-    self.renders[@(render.textureId)] = render;
-    result(@{@"textureId" : @(render.textureId)});
+    if (_messenger != nil) {
+       FlutterRTCVideoRenderer* render = [self createWithTextureRegistry:_textures
+                                                                messenger:_messenger];
+        NSLog(@"%@2");
+        self.renders[@(render.textureId)] = render;
+        result(@{@"textureId" : @(render.textureId)});
+      // _messenger değişkeni nil değilse işlemlerinizi yapabilirsiniz.
+    } else {
+        NSLog(@"%@3");
+
+      // _messenger değişkeni nil ise hata var demektir.
+    }
+
   } else if ([@"videoRendererDispose" isEqualToString:call.method]) {
     NSDictionary* argsMap = call.arguments;
     NSNumber* textureId = argsMap[@"textureId"];
